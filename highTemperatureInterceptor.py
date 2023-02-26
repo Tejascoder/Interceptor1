@@ -2,6 +2,8 @@ from interceptor import Interceptor
 from context import Context
 
 class HighTemperatureInterceptor(Interceptor):
-    def process(self, context: Context):
-        if context.temperature > 30:
+    def update(self, context: Context):
+        temperature= context.get_temperature()
+        print('inside temperature interceptor')
+        if temperature > 30:
             print("High temperature alert!")

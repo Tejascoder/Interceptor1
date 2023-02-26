@@ -3,5 +3,5 @@ from context import Context
 
 class Interceptor(ABC):
     @abstractmethod
-    def process(self, context: Context):
+    def update(self, context: Context):
         pass

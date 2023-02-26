@@ -2,6 +2,8 @@ from interceptor import Interceptor
 from context import Context
 
 class HighPressureInterceptor(Interceptor):
-    def process(self, context: Context):
-        if context.pressure > 80:
+    def update(self, context: Context):
+        pressure= context.get_pressure()
+        print('inside pressure interceptor')
+        if pressure > 80:
             print("High pressure alert!")
